@@ -357,6 +357,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .contact-form .MuiOutlinedInput-root { min-height: 56px; }
 .contact-form .message-field .MuiOutlinedInput-root { align-items: flex-start; }
 .contact-form .form-status { margin-top: -8px; }
+.contact-details-plain { padding: 24px 8px; }
+.contact-details-plain h2.MuiTypography-root { margin: 0 0 8px; font-size: 1.45rem; }
+.simple-contact-list { display: grid; gap: 0; margin-top: 24px; }
+.simple-contact-list p.MuiTypography-root { padding: 13px 0; border-bottom: 1px solid var(--line); }
+.simple-contact-list p.MuiTypography-root:first-child { border-top: 1px solid var(--line); }
+.simple-contact-list strong { color: var(--navy); font-size: .88rem; }
+.simple-contact-list a { overflow-wrap: anywhere; }
+@media (prefers-color-scheme: dark) { .simple-contact-list strong { color: #DCEAFB; } }
+@media (max-width: 600px) {
+  .contact-details-plain { padding: 4px 2px 10px; }
+  .simple-contact-list { margin-top: 16px; }
+}
 @media (prefers-color-scheme: dark) {
   .contact-envelope { background: #3975A9; }
   .contact-form .contact-submit.MuiButton-root { color: #101820; background: #FF8794; }
