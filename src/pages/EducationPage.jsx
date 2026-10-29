@@ -22,17 +22,16 @@ export default function EducationPage() {
         <div className="education-main">
           <div className="education-track"><div className="education-track-icon"><SchoolOutlinedIcon /></div><span/></div>
           <div className="education-details">
-            <Typography variant="h3" component="h2" className="degree-title">Bachelor's Degree in Information Technology Engineering</Typography>
+            <Typography variant="h3" component="h2" className="degree-title">Bachelor of Engineering in Information Technology</Typography>
             <EducationFact icon={<ApartmentOutlinedIcon />} label="Institution">Everest Engineering College, Lalitpur · Pokhara University</EducationFact>
             <EducationFact icon={<CalendarMonthOutlinedIcon />} label="Study period">2022–2026</EducationFact>
-            <Box className="achievement-strip"><WorkspacePremiumOutlinedIcon /><Typography><strong>Achievements:</strong> GitHub Pull Shark ×3, Quickdraw, YOLO</Typography></Box>
             <Divider className="education-divider" />
             <Typography variant="h3" component="h3" className="certificate-heading"><WorkspacePremiumOutlinedIcon /> Certificates</Typography>
-            <Box className="certificate-grid">{certificates.map(([name, url]) => <Link className="certificate-link" key={url} href={url} target="_blank" rel="noopener noreferrer"><span className="certificate-link-icon">↗</span><span>{name}<small>Programiz Pro certificate</small></span></Link>)}</Box>
+            <Box className="certificate-grid">{certificates.map(([name, url]) => <Link className="certificate-link" key={url} href={url} target="_blank" rel="noopener noreferrer"><span className="certificate-link-icon">↗</span><span>{name}<small>Data Science</small></span></Link>)}</Box>
           </div>
         </div>
         <aside className="education-summary" aria-label="Degree summary">
-          <EducationFact icon={<SchoolOutlinedIcon />} label="Degree">Bachelor's in Information Technology Engineering</EducationFact>
+          <EducationFact icon={<SchoolOutlinedIcon />} label="Degree">Bachelor of Engineering in Information Technology</EducationFact>
           <Divider />
           <EducationFact icon={<ApartmentOutlinedIcon />} label="College / University">Everest Engineering College<br/>Pokhara University</EducationFact>
           <Divider />

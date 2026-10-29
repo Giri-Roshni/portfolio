@@ -1,17 +1,24 @@
 import { Box, Card, CardContent, Chip, Container, Link, Stack, Typography } from '@mui/material';
-import ReceiptLongOutlinedIcon from '@mui/icons-material/ReceiptLongOutlined';
+import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
 import LocalHospitalOutlinedIcon from '@mui/icons-material/LocalHospitalOutlined';
-import RestaurantMenuOutlinedIcon from '@mui/icons-material/RestaurantMenuOutlined';
-import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
-import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
+import ImageSearchOutlinedIcon from '@mui/icons-material/ImageSearchOutlined';
+import QueryStatsOutlinedIcon from '@mui/icons-material/QueryStatsOutlined';
+import QuizOutlinedIcon from '@mui/icons-material/QuizOutlined';
+import TwoWheelerOutlinedIcon from '@mui/icons-material/TwoWheelerOutlined';
 
-const projectIcons = [ReceiptLongOutlinedIcon, LocalHospitalOutlinedIcon, RestaurantMenuOutlinedIcon, VisibilityOutlinedIcon, ForumOutlinedIcon];
+const projectIcons = {
+  exam: QuizOutlinedIcon,
+  hospital: LocalHospitalOutlinedIcon,
+  imageForgery: ImageSearchOutlinedIcon,
+  dataScience: QueryStatsOutlinedIcon,
+  rideBooking: TwoWheelerOutlinedIcon
+};
 
 export function Reveal({ children, className = '', delay = 0, ...props }) {
   return <Box className={`reveal ${className}`} style={{ '--delay': `${delay}ms` }} {...props}>{children}</Box>;
 }
 
-export function PageHeading({ eyebrow = 'Er. Sima Thapa · Lalitpur, Nepal', title, intro }) {
+export function PageHeading({ eyebrow = 'Er. Roshani Giri · Lalitpur, Nepal', title, intro }) {
   return <Reveal className="page-heading"><Typography className="eyebrow">{eyebrow}</Typography><Typography variant="h1" component="h1">{title}</Typography>{intro && <Typography color="text.secondary" className="page-intro">{intro}</Typography>}</Reveal>;
 }
 
@@ -27,10 +34,10 @@ export function SkillCard({ title, chips, icon: Icon, delay = 0 }) {
   return <Reveal delay={delay}><Card className="skill-card"><CardContent><div className="skill-card-heading"><span className="skill-icon">{Icon && <Icon />}</span><Typography variant="h3" component="h2">{title}</Typography></div><Stack direction="row" useFlexGap flexWrap="wrap" gap={1}>{chips.map(chip => <Chip key={chip} label={chip} variant="outlined" />)}</Stack></CardContent></Card></Reveal>;
 }
 
-export function ProjectCard({ project, delay = 0, index = 0 }) {
-  const Icon = projectIcons[index % projectIcons.length];
+export function ProjectCard({ project, delay = 0 }) {
+  const Icon = projectIcons[project.icon] || CodeOutlinedIcon;
   return <Reveal delay={delay}><Card className="project-card"><CardContent>
-    <div className="project-card-top"><div className="project-icon"><Icon /></div><div className="project-copy"><Typography variant="h3" component="h3">{project.title}</Typography><Typography color="text.secondary">{project.text} <Box component="strong" className="placeholder">{project.placeholder}</Box></Typography></div></div>
+    <div className="project-card-top"><div className="project-icon"><Icon /></div><div className="project-copy"><Typography variant="h3" component="h3">{project.title}</Typography><Typography color="text.secondary">{project.text}</Typography>{project.impact && <Box component="p" className="project-impact">{project.impact}</Box>}</div></div>
     <Stack direction="row" useFlexGap flexWrap="wrap" gap={1} className="project-chips">{project.chips.map(chip => <Chip key={chip} label={chip} variant="outlined" />)}</Stack>
     <Stack direction="row" useFlexGap flexWrap="wrap" gap={1} className="project-actions">
       {project.live && <Link className="text-action" href={project.live} target="_blank" rel="noopener noreferrer">View Live ↗</Link>}

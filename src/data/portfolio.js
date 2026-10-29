@@ -5,31 +5,54 @@ export const navigation = [
 
 export const skillGroups = [
   ['Programming', ['JavaScript (ES6+)', 'Node.js', 'Python']],
-  ['API Development and Integration', ['REST APIs', 'Express.js', 'FastAPI', 'JSON', 'Postman']],
-  ['Frontend', ['React', 'React Router', 'React Query', 'React Hook Form', 'Redux', 'Vite']],
-  ['Databases', ['MongoDB', 'MySQL', 'PostgreSQL', 'MariaDB']],
-  ['Testing and Debugging', ['Unit and integration testing', 'Debugging', 'Root-cause analysis']],
-  ['Tools', ['Git', 'GitHub', 'Jira', 'Agile']], ['Cloud', ['AWS', 'Firebase', 'Vercel']], ['Design', ['Figma', 'Canva']]
+  ['Backend & API Development', ['REST APIs', 'Express.js', 'FastAPI', 'JSON', 'Postman']],
+  ['Frontend Development', ['React', 'Material UI (MUI)', 'HTML', 'CSS']],
+  ['Databases', ['MySQL', 'MariaDB','PostgreSQL']],
+  ['Data Science', ['Pandas', 'NumPy', 'Matplotlib']],
+  ['AI & Machine Learning', ['Scikit-learn', 'OpenCV', 'SIFT', 'DBSCAN', 'Classification']],
+  ['Testing and Debugging', ['Debugging', 'Root-cause analysis','Unit and integration testing']],
+  ['Tools', ['Git', 'GitHub', 'Jira', 'Agile', 'Vite']], ['Cloud', ['Firebase', 'Vercel']], ['Design', ['Figma', 'Canva']]
 ];
 
 export const projects = [
-  { title: 'Billing & POS System', text: 'Web billing and point-of-sale application with an admin dashboard.', placeholder: 'Add verified features you built.', chips: ['React', 'Node.js', 'Express.js', 'MySQL'], demo: 'Available on request' },
-  { title: 'MCVTC Website', text: 'Official website for Manmohan Cardiothoracic Vascular and Transplant Center.', placeholder: 'Add your specific contribution.', chips: ['React', 'Node.js', 'Express.js', 'MySQL'], live: 'https://mcvtc.org.np' },
-  { title: 'BBG · Basyal Bhojan Ghar', text: 'Online food ordering website.', placeholder: 'Add your specific contribution.', chips: ['React', 'Node.js', 'Express.js', 'MySQL'], live: 'https://bbgfood.com' },
-  { title: 'Inner Eye', text: 'React client and Node.js server.', placeholder: 'Describe what the application does.', chips: ['React', 'Node.js', 'Express.js', 'MySQL'], code: [['Client Code', 'https://github.com/SimaThapa/inner-eye-client'], ['Server Code', 'https://github.com/SimaThapa/Inner-eye-server-side-']] },
-  { title: 'Chat App', text: 'Chat application built with React and Node.js.', placeholder: 'Add a concise description of its features.', chips: ['React', 'Node.js', 'Express.js', 'MySQL'], code: [['Code', 'https://github.com/SimaThapa/chat-app']] }
+  { title: 'Shajyatri', icon: 'rideBooking', text: 'A ride-booking and vehicle-rental app that lets users book rides or rent vehicles, inspired by on-demand mobility platforms such as Pathao and inDrive.', impact: 'Brings ride booking and vehicle rental together in one app.', chips: ['Ride Booking', 'Vehicle Rental', 'On-Demand Mobility'] },
+  { title: 'Agnikunda', icon: 'exam', text: 'An online examination platform built with a React interface and Node.js/Express backend.', impact: 'Full-stack project using REST APIs and MySQL.', chips: ['React', 'Node.js', 'Express.js', 'MySQL'], demo: 'Available on request' },
+{
+  title: 'Hospital Management System',
+  icon: 'hospital',
+  text: 'A comprehensive system for patient registration, OPD/IPD visits, appointments, consultations, admissions, billing, pharmacy, laboratory services, and medical records.',
+  impact: 'Developed and maintained backend REST APIs, implemented business logic, integrated MySQL databases, and resolved bugs to improve system reliability.',
+  chips: ['Node.js', 'Express.js', 'JavaScript', 'MySQL', 'REST APIs'],
+  live: 'Beta version'
+}, 
+  {
+    title: 'Copy-Move Image Forgery Detection',
+    icon: 'imageForgery',
+    text: 'An image forgery detection project that identifies duplicated regions within images using computer vision techniques.',
+    impact: 'Explored image processing and feature matching with Python and OpenCV.',
+    chips: ['Python', 'OpenCV', 'SIFT', 'DBSCAN', 'NumPy'],
+    link: 
+    'https://github.com/Giri-Roshni/cmfd_miniproject'
+    
+  },  
+   {
+    title: 'Titanic Survival Prediction',
+    icon: 'dataScience',
+    text: 'Machine learning project that predicts passenger survival using demographic and travel-related data.',
+    impact: 'Prepared and explored data, handled missing values, and trained classification models.',
+    chips: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Matplotlib'],
+    link:'https://github.com/Giri-Roshni/Titanic_survival_prediction'
+   }
 ];
 
 export const evidence = [
   ['API Development', 'REST API implementation with Express.js and FastAPI.'], ['Programming', 'JavaScript, Node.js and Python experience.'],
   ['Integration', 'API development and integration work; add a verified example if available.'], ['Unit Testing', 'Unit and integration testing experience.'],
   ['Debugging', 'Production defect investigation and root-cause analysis.'], ['Git', 'GitHub workflow and pull request reviews.'],
-  ["Bachelor's in IT", 'Information Technology Engineering, Everest Engineering College.']
+  ["Bachelor of Engineering in Information Technology", 'Everest Engineering College.']
 ];
 
 export const certificates = [
-  ['Practical Git and GitHub', 'https://programiz.pro/certificates/D27C4AE88143'],
-  ['Basic', 'https://programiz.pro/certificates/4BBD2277F59A'],
-  ['Learn JavaScript Intermediate', 'https://programiz.pro/certificates/D510719B94B1'],
-  ['JavaScript in Browser', 'https://programiz.pro/certificates/28A97A1E6144']
+  ['Data science', 'https://www.mindrisers.com.np/certificate/validate/MR-82015-DS'],
+  
 ];

@@ -50,7 +50,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .project-card .MuiCardContent-root { display: flex; flex-direction: column; width: 100%; }
 .project-chips.MuiStack-root { margin-top: 14px; }
 .project-actions.MuiStack-root { margin-top: auto; padding-top: 18px; }
-.placeholder { color: #B3263E; }
+.project-impact { margin: 11px 0 0; padding: 11px 13px; border-left: 3px solid #568A78; border-radius: 0 10px 10px 0; background: color-mix(in srgb, #568A78 10%, var(--card)); color: var(--muted); font-size: .92rem; line-height: 1.55; font-weight: 550; }
 .confidential-note { background: #F1F1EF; border-left: 3px solid #B3263E; padding: 14px 18px; margin-top: 16px; color: #4B5560; border-radius: 0 12px 12px 0; }
 .evidence-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .evidence-card .MuiCardContent-root { padding: 16px 18px; }
@@ -109,6 +109,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .avatar-wrap { position: relative; }
 .avatar-halo { position: absolute; inset: -24px; border: 1px solid rgb(179 38 62 / 22%); border-radius: 44% 56% 51% 49% / 53% 43% 57% 47%; transform: rotate(14deg); animation: halo-drift 9s ease-in-out infinite alternate; }
 .hero-avatar.MuiAvatar-root { position: relative; width: clamp(170px, 23vw, 250px); height: clamp(170px, 23vw, 250px); object-fit: cover; }
+.hero-avatar.MuiAvatar-root { animation: avatar-float 5s ease-in-out infinite; }
 .home-feature { position: relative; margin-top: 38px; padding: 54px 48px; overflow: hidden; border-radius: 46px 12px 46px 12px; background: var(--card); }
 .home-feature::after { content: ''; position: absolute; width: 230px; height: 230px; right: -75px; top: -95px; border-radius: 50%; border: 1px solid rgb(179 38 62 / 24%); box-shadow: 0 0 0 18px rgb(179 38 62 / 3%), 0 0 0 38px rgb(11 42 74 / 3%); }
 .home-feature .page-heading { margin-bottom: 20px; }
@@ -128,6 +129,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .footer .MuiContainer-root { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 @keyframes page-enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes halo-drift { from { transform: rotate(10deg) scale(.99); } to { transform: rotate(22deg) scale(1.035); } }
+@keyframes avatar-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 @media (prefers-color-scheme: dark) {
   .route-curtain { background: radial-gradient(ellipse at center, rgb(169 197 226 / 8%), rgb(255 135 148 / 4%) 58%, transparent 72%); }
   .hero::before { background: linear-gradient(125deg, rgb(169 197 226 / 5%), rgb(255 135 148 / 5%)); }
@@ -147,7 +149,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 @media (prefers-reduced-motion: reduce) {
   .route-main { animation: none; }
-  .avatar-halo { animation: none; }
+  .avatar-halo, .hero-avatar.MuiAvatar-root { animation: none; }
 }
 
 /* Shared heading and Education page treatment. */
@@ -389,7 +391,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .contact-form .message-field, .contact-form .form-status, .contact-form > .MuiTypography-body2 { grid-column: auto; }
   .contact-form .contact-submit.MuiButton-root { width: 100%; }
 }
-.projects-grid { grid-auto-rows: 270px; align-items: stretch; row-gap: 20px; column-gap: 20px; }
+.projects-grid { grid-auto-rows: minmax(270px, auto); align-items: stretch; row-gap: 20px; column-gap: 20px; }
 .projects-grid > .reveal { height: 100%; }
 .projects-grid .project-card.MuiCard-root { height: 100%; min-height: 0; }
 .project-card .MuiCardContent-root { min-height: 0; flex: 1; }
@@ -397,12 +399,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .project-card .project-icon { transition: transform 360ms cubic-bezier(.2,.75,.25,1), background-color 240ms ease; }
 .project-card:hover .project-icon { transform: translateY(-3px) rotate(-5deg); background: color-mix(in srgb, var(--crimson) 14%, var(--card)); }
 .project-card:hover .project-arrow { transform: translateX(4px); }
+.hero-actions .MuiButton-root { transition: transform .2s ease, box-shadow .2s ease; }
+.hero-actions .MuiButton-root:hover { transform: translateY(-2px); box-shadow: 0 7px 16px rgb(11 42 74 / 14%); }
+.hero-actions .MuiButton-root:active { transform: translateY(0); }
 .projects-page .confidential-note { margin-top: 24px; margin-bottom: 28px; }
 @media (max-width: 700px) {
-  .projects-grid { grid-auto-rows: 285px; }
+  .projects-grid { grid-auto-rows: minmax(285px, auto); }
 }
 @media (max-width: 360px) {
-  .projects-grid { grid-auto-rows: 315px; }
+  .projects-grid { grid-auto-rows: minmax(315px, auto); }
   .project-chips.MuiStack-root, .project-actions.MuiStack-root { margin-left: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
