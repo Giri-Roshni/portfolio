@@ -3,7 +3,7 @@ import { AppBar, Box, Button, Container, IconButton, Link, Stack, Toolbar, useMe
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { navigation } from '../data/portfolio.js';
-import resumePdf from '../assests/Roshnicv.pdf';
+import resumePdf from '../assests/Roshani_resume.pdf';
 
 export const pageHref = (page) => `#/${page}`;
 
@@ -20,7 +20,7 @@ export default function SiteLayout({ page, children }) {
 
   const nav = <Stack component="nav" direction={isMobile ? 'column' : 'row'} spacing={isMobile ? 0 : 1} aria-label="Main navigation">
     {navigation.map(([label, slug]) => <Link key={slug} href={pageHref(slug)} underline="none" className={`nav-link ${page === slug ? 'active' : ''}`} aria-current={page === slug ? 'page' : undefined} onClick={() => setMobileOpen(false)}>{label}</Link>)}
-    <Button component="a" href={resumePdf} download="Roshnicv.pdf" variant="outlined" className="resume-button">Download Resume (PDF)</Button>
+    <Button component="a" href={resumePdf} download="Roshani_resume.pdf" variant="outlined" className="resume-button">Download Resume (PDF)</Button>
   </Stack>;
 
   return <>
